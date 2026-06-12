@@ -1,7 +1,7 @@
 <?php
 class Koneksi {
     private $host = "localhost";
-    private $db_name = "DB_LATIHAN_TRPL1A_Sunu_Setyo_Jati";
+    private $db_name = "DB_LATIHAN_TRPL1A_SunuSetyoJati";
     private $username = "root";
     private $password = "";
     protected $conn;
@@ -11,7 +11,6 @@ class Koneksi {
         try {
             $this->conn = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->db_name, $this->username, $this->password);
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            // echo "Koneksi berhasil!"; 
         } catch(PDOException $exception) {
             echo "Koneksi error: " . $exception->getMessage();
         }
