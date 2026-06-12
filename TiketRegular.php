@@ -20,10 +20,10 @@ class TiketRegular extends Tiket {
     public function getLokasiBaris() { return $this->lokasiBaris; }
     public function setLokasiBaris($lokasiBaris) { $this->lokasiBaris = $lokasiBaris; }
 
-    // Implementasi Method Abstrak Induk
+    // Ganti method hitungTotalHarga() di file TiketRegular.php dengan kode ini:
     public function hitungTotalHarga() {
-        $tambahanAudio = ($this->tipeAudio == 'Dolby Atmos' || $this->tipeAudio == 'DTS:X') ? 10000 : 0;
-        return $this->HargaDasarTiket + $tambahanAudio;
+        // Tarif standar murni tanpa biaya tambahan fasilitas
+        return $this->jumlah_kursi * $this->HargaDasarTiket;
     }
 
     public function tampilkanInfoFasilitas() {

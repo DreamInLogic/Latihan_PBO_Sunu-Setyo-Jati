@@ -19,10 +19,10 @@ class TiketVelvet extends Tiket {
     public function getLayananButler() { return $this->layananButler; }
     public function setLayananButler($layananButler) { $this->layananButler = $layananButler; }
 
-    // Implementasi Method Abstrak Induk
+    // Ganti method hitungTotalHarga() di file TiketVelvet.php dengan kode ini:
     public function hitungTotalHarga() {
-        $biayaVelvet = 50000;
-        return $this->HargaDasarTiket + $biayaVelvet;
+        // Dikenakan surcharge/biaya tambahan kelas premium sebesar 50% (dikali 1.50)
+        return ($this->jumlah_kursi * $this->HargaDasarTiket) * 1.50;
     }
 
     public function tampilkanInfoFasilitas() {

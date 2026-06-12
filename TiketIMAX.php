@@ -19,12 +19,11 @@ class TiketIMAX extends Tiket {
     public function getEfekGerakFitur() { return $this->efekGerakFitur; }
     public function setEfekGerakFitur($efekGerakFitur) { $this->efekGerakFitur = $efekGerakFitur; }
 
-    // Implementasi Method Abstrak Induk
+    // Ganti method hitungTotalHarga() di file TiketIMAX.php dengan kode ini:
     public function hitungTotalHarga() {
-        $biayaIMAX = 25000; 
-        return $this->HargaDasarTiket + $biayaIMAX;
+        // Ditambah biaya tambahan teknologi proyeksi IMAX Rp 35.000
+        return ($this->jumlah_kursi * $this->HargaDasarTiket) + 35000;
     }
-
     public function tampilkanInfoFasilitas() {
         $kacamata = ($this->kacamata3dId) ? "Termasuk Kacamata 3D (ID: {$this->kacamata3dId})" : "2D (Tanpa Kacamata)";
         $efek = $this->efekGerakFitur ?? "Tanpa Efek Gerak";
